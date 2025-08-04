@@ -44,6 +44,7 @@ namespace WinFormsApp1___BasicOOP
             groupBox1 = new GroupBox();
             toolTip5 = new ToolTip(components);
             pictureBox1 = new PictureBox();
+            toolTip6 = new ToolTip(components);
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -156,11 +157,13 @@ namespace WinFormsApp1___BasicOOP
             // 
             // pictureBox1
             // 
+            pictureBox1.Cursor = Cursors.Hand;
             pictureBox1.Location = new Point(226, 40);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(73, 72);
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;
+            toolTip6.SetToolTip(pictureBox1, "DOTA LOGO");
             pictureBox1.Click += pictureBox1_Click;
             // 
             // Form1
@@ -207,5 +210,6 @@ namespace WinFormsApp1___BasicOOP
         private GroupBox groupBox1;
         private ToolTip toolTip5;
         private PictureBox pictureBox1;
+        private ToolTip toolTip6;
     }
 }
