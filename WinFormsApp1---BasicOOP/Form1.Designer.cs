@@ -43,7 +43,9 @@ namespace WinFormsApp1___BasicOOP
             checkBox1 = new CheckBox();
             groupBox1 = new GroupBox();
             toolTip5 = new ToolTip(components);
+            pictureBox1 = new PictureBox();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // lblEmail
@@ -88,10 +90,10 @@ namespace WinFormsApp1___BasicOOP
             txtPassword.ForeColor = SystemColors.ActiveCaptionText;
             txtPassword.Location = new Point(143, 91);
             txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(237, 22);
             txtPassword.TabIndex = 3;
             toolTip2.SetToolTip(txtPassword, "Enter a password");
-            txtPassword.PasswordChar = '*';
             // 
             // btnSignIn
             // 
@@ -144,19 +146,30 @@ namespace WinFormsApp1___BasicOOP
             groupBox1.Controls.Add(lblEmail);
             groupBox1.Font = new Font("Roboto", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox1.ForeColor = SystemColors.ButtonHighlight;
-            groupBox1.Location = new Point(39, 25);
+            groupBox1.Location = new Point(44, 144);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(438, 214);
             groupBox1.TabIndex = 7;
             groupBox1.TabStop = false;
             groupBox1.Text = "SIGN UP or SIGN IN!";
+            groupBox1.Enter += groupBox1_Enter;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(226, 40);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(73, 72);
+            pictureBox1.TabIndex = 8;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSlateGray;
-            ClientSize = new Size(522, 266);
+            ClientSize = new Size(537, 420);
+            Controls.Add(pictureBox1);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Form1";
@@ -164,6 +177,7 @@ namespace WinFormsApp1___BasicOOP
             Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -192,5 +206,6 @@ namespace WinFormsApp1___BasicOOP
         private CheckBox checkBox1;
         private GroupBox groupBox1;
         private ToolTip toolTip5;
+        private PictureBox pictureBox1;
     }
 }
