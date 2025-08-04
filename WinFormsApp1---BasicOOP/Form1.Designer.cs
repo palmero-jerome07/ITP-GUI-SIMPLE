@@ -158,7 +158,7 @@ namespace WinFormsApp1___BasicOOP
             // pictureBox1
             // 
             pictureBox1.Cursor = Cursors.Hand;
-            pictureBox1.Location = new Point(226, 40);
+            pictureBox1.Location = new Point(225, 40);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(73, 72);
             pictureBox1.TabIndex = 8;
