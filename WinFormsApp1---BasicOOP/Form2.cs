@@ -69,7 +69,6 @@ namespace WinFormsApp1___BasicOOP
         private void btn4_Click(object sender, EventArgs e)
         {
             this.textBox1.Text += this.btn4.Text;
-        }
 
         private void btn5_Click(object sender, EventArgs e)
         {
