@@ -13,11 +13,9 @@ namespace WinFormsApp1___BasicOOP
 {
     public partial class Calculator : Form
     {
-        private string result;
-        private float num1;
-        private float num2;
-        private char operation;
-
+        private float num1, num2, currentValue, lastValue;
+        private string result, operation, lastOperator;
+        bool isNewEntry = true;
         public Calculator()
         {
             InitializeComponent();
@@ -30,8 +28,6 @@ namespace WinFormsApp1___BasicOOP
         {
 
         }
-
-
 
         private void Calculator_Load(object sender, EventArgs e)
         {
@@ -51,53 +47,68 @@ namespace WinFormsApp1___BasicOOP
 
         }
 
+        private void Number_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            if (isNewEntry)
+            {
+                textBox1.Text = btn.Text;
+                isNewEntry = false;
+            }
+            else
+            {
+                textBox1.Text += btn.Text;
+            }
+        }
+
         private void button21_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text += this.btn1.Text;
+            Number_Click(sender, e);
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text += this.btn2.Text;
+            Number_Click(sender, e);
         }
 
         private void btn3_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text += this.btn3.Text;
+            Number_Click(sender, e);
         }
 
         private void btn4_Click(object sender, EventArgs e)
         {
             this.textBox1.Text += this.btn4.Text;
+        }
 
         private void btn5_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text += this.btn5.Text;
+            Number_Click(sender, e);
         }
 
         private void btn6_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text += this.btn6.Text;
+            Number_Click(sender, e);
         }
 
         private void btn7_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text += this.btn7.Text;
+            Number_Click(sender, e);
         }
 
         private void btn8_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text += this.btn8.Text;
+            Number_Click(sender, e);
         }
 
         private void btn9_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text += this.btn9.Text;
+            Number_Click(sender, e);
         }
 
         private void btn0_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text += this.btn0.Text;
+            Number_Click(sender, e);
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -139,7 +150,7 @@ namespace WinFormsApp1___BasicOOP
 
         private void btnDot_Click(object sender, EventArgs e)
         {
-            this.textBox1.Text += this.btnDot.Text;
+            Number_Click(sender, e);
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -161,68 +172,65 @@ namespace WinFormsApp1___BasicOOP
             // Clear the textbox
             this.textBox1.Clear();
         }
+        private void Operator_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            float enteredValue = float.Parse(textBox1.Text);
 
+            if (lastOperator != "")
+            {
+                // Perform the pending calculation
+                switch (lastOperator)
+                {
+                    case "+": currentValue += enteredValue; break;
+                    case "-": currentValue -= enteredValue; break;
+                    case "*": currentValue *= enteredValue; break;
+                    case "/": currentValue /= enteredValue; break;
+                }
+                textBox1.Text = currentValue.ToString();
+            }
+            else
+            {
+                currentValue = enteredValue;
+            }
+
+            lastOperator = btn.Text;
+            isNewEntry = true;
+        }
         private void button6_Click(object sender, EventArgs e)
         {
-            num1 = float.Parse(textBox1.Text);
-            operation = '+';
-            clearText();
+            Operator_Click(sender, e);
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            num1 = float.Parse(textBox1.Text);
-            operation = '-';
-            clearText();
+            Operator_Click(sender, e);
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            num1 = float.Parse(textBox1.Text);
-            operation = '/';
-            clearText();
+            Operator_Click(sender, e);
         }
         private void btnMultiply_Click(object sender, EventArgs e)
         {
-            num1 = float.Parse(textBox1.Text);
-            operation = '*';
-            clearText();
+            Operator_Click(sender, e);
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            num2 = float.Parse(textBox1.Text);
-
-            switch (operation)
             {
-                case '+':
-                    Addition addition = new Addition();
-                    addition.num1 = num1;
-                    addition.num2 = num2;
-                    result = addition.add();
-                    break;
-                case '-':
-                    Subtraction subtraction = new Subtraction();
-                    subtraction.num1 = num1;
-                    subtraction.num2 = num2;
-                    result = subtraction.subtract();
-                    break;
-                case '/':
-                    Divide divide = new Divide();
-                    divide.num1 = num1;
-                    divide.num2 = num2;
-                    result = divide.divide();
-                    break;
-                case '*':
-                    Multiply multiplication = new Multiply();
-                    multiplication.num1 = num1;
-                    multiplication.num2 = num2;
-                    result = multiplication.multiply();
-                    break;
-                default:
-                    result = "Error: Invalid operation.";
-                    break;
-            }
+                float enteredValue = float.Parse(textBox1.Text);
 
-            textBox1.Text = result.ToString();
+                switch (lastOperator)
+                {
+                    case "+": currentValue += enteredValue; break;
+                    case "-": currentValue -= enteredValue; break;
+                    case "*": currentValue *= enteredValue; break;
+                    case "/": currentValue /= enteredValue; break;
+                }
+
+                textBox1.Text = currentValue.ToString();
+                lastOperator = "";
+                isNewEntry = true;
+            }
         }
 
         
