@@ -38,6 +38,8 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(322, 50);
             textBox1.TabIndex = 0;
+            textBox1.TextAlign = HorizontalAlignment.Right;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // Calculator
             // 

@@ -16,5 +16,10 @@ namespace WinFormsApp1___BasicOOP
         {
             InitializeComponent();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
