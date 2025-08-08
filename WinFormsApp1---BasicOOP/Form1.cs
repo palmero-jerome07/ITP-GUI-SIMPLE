@@ -1,8 +1,8 @@
 namespace WinFormsApp1___BasicOOP
 {
-    public partial class Form1 : Form
+    public partial class Authentication : Form
     {
-        public Form1()
+        public Authentication()
         {
             InitializeComponent();
         }
@@ -29,13 +29,18 @@ namespace WinFormsApp1___BasicOOP
             }
             else
             {
-                if (this.txtEmail.Text != "jerome@example.com" && this.txtPassword.Text != "admin123")
+                if (this.txtEmail.Text != "jerome@example.com" || this.txtPassword.Text != "admin123")
                 {
                     MessageBox.Show("Invalid email or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
                     MessageBox.Show("Sign-in successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Open the next form
+                    Calculator form2 = new Calculator();
+                    form2.Show();
+                    this.Hide(); // Optional: hide the current form
                 }
             }
         }

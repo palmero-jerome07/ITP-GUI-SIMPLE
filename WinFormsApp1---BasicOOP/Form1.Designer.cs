@@ -1,7 +1,7 @@
 ﻿
 namespace WinFormsApp1___BasicOOP
 {
-    partial class Form1
+    partial class Authentication
     {
         /// <summary>
         ///  Required designer variable.
@@ -166,7 +166,7 @@ namespace WinFormsApp1___BasicOOP
             toolTip6.SetToolTip(pictureBox1, "DOTA LOGO");
             pictureBox1.Click += pictureBox1_Click;
             // 
-            // Form1
+            // Authentication
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -175,8 +175,8 @@ namespace WinFormsApp1___BasicOOP
             Controls.Add(pictureBox1);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Name = "Form1";
-            Text = "Form1";
+            Name = "Authentication";
+            Text = "Login Form";
             Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
