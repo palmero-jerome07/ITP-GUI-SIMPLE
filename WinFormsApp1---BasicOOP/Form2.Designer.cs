@@ -30,13 +30,14 @@ namespace WinFormsApp1___BasicOOP
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calculator));
             textBox1 = new TextBox();
-            button1 = new Button();
+            btnDivide = new Button();
             button2 = new Button();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
-            button7 = new Button();
+            btnSubtract = new Button();
+            btnMultiply = new Button();
+            btnAdd = new Button();
+            btnEquals = new Button();
             btn9 = new Button();
             btn6 = new Button();
             btn3 = new Button();
@@ -68,21 +69,21 @@ namespace WinFormsApp1___BasicOOP
             textBox1.TextChanged += textBox1_TextChanged;
             textBox1.KeyPress += textBox1_KeyPress;
             // 
-            // button1
+            // btnDivide
             // 
-            button1.BackColor = Color.FromArgb(222, 192, 0);
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderColor = Color.FromArgb(222, 192, 0);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Roboto", 20.25F, FontStyle.Bold);
-            button1.Location = new Point(251, 104);
-            button1.Name = "button1";
-            button1.Size = new Size(61, 46);
-            button1.TabIndex = 1;
-            button1.Text = "/";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnDivide.BackColor = Color.FromArgb(222, 192, 0);
+            btnDivide.Cursor = Cursors.Hand;
+            btnDivide.FlatAppearance.BorderColor = Color.FromArgb(222, 192, 0);
+            btnDivide.FlatAppearance.BorderSize = 0;
+            btnDivide.FlatStyle = FlatStyle.Flat;
+            btnDivide.Font = new Font("Roboto", 20.25F, FontStyle.Bold);
+            btnDivide.Location = new Point(251, 104);
+            btnDivide.Name = "btnDivide";
+            btnDivide.Size = new Size(61, 46);
+            btnDivide.TabIndex = 1;
+            btnDivide.Text = "/";
+            btnDivide.UseVisualStyleBackColor = false;
+            btnDivide.Click += button1_Click;
             // 
             // button2
             // 
@@ -98,65 +99,69 @@ namespace WinFormsApp1___BasicOOP
             button2.Text = "DEL";
             button2.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnSubtract
             // 
-            button4.BackColor = Color.FromArgb(222, 192, 0);
-            button4.Cursor = Cursors.Hand;
-            button4.FlatAppearance.BorderColor = Color.FromArgb(222, 192, 0);
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Roboto", 20.25F, FontStyle.Bold);
-            button4.Location = new Point(251, 165);
-            button4.Name = "button4";
-            button4.Size = new Size(61, 46);
-            button4.TabIndex = 4;
-            button4.Text = "-";
-            button4.UseVisualStyleBackColor = false;
+            btnSubtract.BackColor = Color.FromArgb(222, 192, 0);
+            btnSubtract.Cursor = Cursors.Hand;
+            btnSubtract.FlatAppearance.BorderColor = Color.FromArgb(222, 192, 0);
+            btnSubtract.FlatAppearance.BorderSize = 0;
+            btnSubtract.FlatStyle = FlatStyle.Flat;
+            btnSubtract.Font = new Font("Roboto", 20.25F, FontStyle.Bold);
+            btnSubtract.Location = new Point(251, 165);
+            btnSubtract.Name = "btnSubtract";
+            btnSubtract.Size = new Size(61, 46);
+            btnSubtract.TabIndex = 4;
+            btnSubtract.Text = "-";
+            btnSubtract.UseVisualStyleBackColor = false;
+            btnSubtract.Click += button4_Click;
             // 
-            // button5
+            // btnMultiply
             // 
-            button5.BackColor = Color.FromArgb(222, 192, 0);
-            button5.Cursor = Cursors.Hand;
-            button5.FlatAppearance.BorderColor = Color.FromArgb(222, 192, 0);
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Roboto", 20.25F, FontStyle.Bold);
-            button5.Location = new Point(251, 226);
-            button5.Name = "button5";
-            button5.Size = new Size(61, 46);
-            button5.TabIndex = 5;
-            button5.Text = "x";
-            button5.UseVisualStyleBackColor = false;
+            btnMultiply.BackColor = Color.FromArgb(222, 192, 0);
+            btnMultiply.Cursor = Cursors.Hand;
+            btnMultiply.FlatAppearance.BorderColor = Color.FromArgb(222, 192, 0);
+            btnMultiply.FlatAppearance.BorderSize = 0;
+            btnMultiply.FlatStyle = FlatStyle.Flat;
+            btnMultiply.Font = new Font("Roboto", 20.25F, FontStyle.Bold);
+            btnMultiply.Location = new Point(251, 226);
+            btnMultiply.Name = "btnMultiply";
+            btnMultiply.Size = new Size(61, 46);
+            btnMultiply.TabIndex = 5;
+            btnMultiply.Text = "x";
+            btnMultiply.UseVisualStyleBackColor = false;
+            btnMultiply.Click += btnMultiply_Click;
             // 
-            // button6
+            // btnAdd
             // 
-            button6.BackColor = Color.FromArgb(222, 192, 0);
-            button6.Cursor = Cursors.Hand;
-            button6.FlatAppearance.BorderColor = Color.FromArgb(222, 192, 0);
-            button6.FlatAppearance.BorderSize = 0;
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Roboto", 20.25F, FontStyle.Bold);
-            button6.Location = new Point(251, 288);
-            button6.Name = "button6";
-            button6.Size = new Size(61, 46);
-            button6.TabIndex = 6;
-            button6.Text = "+";
-            button6.UseVisualStyleBackColor = false;
+            btnAdd.BackColor = Color.FromArgb(222, 192, 0);
+            btnAdd.Cursor = Cursors.Hand;
+            btnAdd.FlatAppearance.BorderColor = Color.FromArgb(222, 192, 0);
+            btnAdd.FlatAppearance.BorderSize = 0;
+            btnAdd.FlatStyle = FlatStyle.Flat;
+            btnAdd.Font = new Font("Roboto", 20.25F, FontStyle.Bold);
+            btnAdd.Location = new Point(251, 288);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(61, 46);
+            btnAdd.TabIndex = 6;
+            btnAdd.Text = "+";
+            btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += button6_Click;
             // 
-            // button7
+            // btnEquals
             // 
-            button7.BackColor = Color.FromArgb(222, 192, 0);
-            button7.Cursor = Cursors.Hand;
-            button7.FlatAppearance.BorderColor = Color.FromArgb(222, 192, 0);
-            button7.FlatAppearance.BorderSize = 0;
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("Roboto", 20.25F, FontStyle.Bold);
-            button7.Location = new Point(251, 349);
-            button7.Name = "button7";
-            button7.Size = new Size(61, 46);
-            button7.TabIndex = 7;
-            button7.Text = "=";
-            button7.UseVisualStyleBackColor = false;
+            btnEquals.BackColor = Color.FromArgb(222, 192, 0);
+            btnEquals.Cursor = Cursors.Hand;
+            btnEquals.FlatAppearance.BorderColor = Color.FromArgb(222, 192, 0);
+            btnEquals.FlatAppearance.BorderSize = 0;
+            btnEquals.FlatStyle = FlatStyle.Flat;
+            btnEquals.Font = new Font("Roboto", 20.25F, FontStyle.Bold);
+            btnEquals.Location = new Point(251, 349);
+            btnEquals.Name = "btnEquals";
+            btnEquals.Size = new Size(61, 46);
+            btnEquals.TabIndex = 7;
+            btnEquals.Text = "=";
+            btnEquals.UseVisualStyleBackColor = false;
+            btnEquals.Click += button7_Click;
             // 
             // btn9
             // 
@@ -404,14 +409,15 @@ namespace WinFormsApp1___BasicOOP
             Controls.Add(btn3);
             Controls.Add(btn6);
             Controls.Add(btn9);
-            Controls.Add(button7);
-            Controls.Add(button6);
-            Controls.Add(button5);
-            Controls.Add(button4);
+            Controls.Add(btnEquals);
+            Controls.Add(btnAdd);
+            Controls.Add(btnMultiply);
+            Controls.Add(btnSubtract);
             Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnDivide);
             Controls.Add(textBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "Calculator";
             Text = "Calculator";
@@ -428,12 +434,12 @@ namespace WinFormsApp1___BasicOOP
         #endregion
 
         private TextBox textBox1;
-        private Button button1;
+        private Button btnDivide;
         private Button button2;
-        private Button button4;
-        private Button button5;
-        private Button button6;
-        private Button button7;
+        private Button btnSubtract;
+        private Button btnMultiply;
+        private Button btnAdd;
+        private Button btnEquals;
         private Button btn9;
         private Button btn6;
         private Button btn3;

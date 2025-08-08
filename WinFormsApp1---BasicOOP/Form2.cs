@@ -8,10 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace WinFormsApp1___BasicOOP
 {
     public partial class Calculator : Form
     {
+        private string result;
+        private float num1;
+        private float num2;
+        private char operation;
+
         public Calculator()
         {
             InitializeComponent();
@@ -25,13 +31,19 @@ namespace WinFormsApp1___BasicOOP
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void Calculator_Load(object sender, EventArgs e)
         {
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is ModernButton btn)
+                {
+                    btn.BorderRadius = 20;
+                    btn.BackgroundColor = Color.FromArgb(46, 204, 113);
+                    btn.TextColor = Color.White;
+                }
+            }
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -150,5 +162,70 @@ namespace WinFormsApp1___BasicOOP
             // Clear the textbox
             this.textBox1.Clear();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            num1 = float.Parse(textBox1.Text);
+            operation = '+';
+            clearText();
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            num1 = float.Parse(textBox1.Text);
+            operation = '-';
+            clearText();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            num1 = float.Parse(textBox1.Text);
+            operation = '/';
+            clearText();
+        }
+        private void btnMultiply_Click(object sender, EventArgs e)
+        {
+            num1 = float.Parse(textBox1.Text);
+            operation = '*';
+            clearText();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            num2 = float.Parse(textBox1.Text);
+
+            switch (operation)
+            {
+                case '+':
+                    Addition addition = new Addition();
+                    addition.num1 = num1;
+                    addition.num2 = num2;
+                    result = addition.add();
+                    break;
+                case '-':
+                    Subtraction subtraction = new Subtraction();
+                    subtraction.num1 = num1;
+                    subtraction.num2 = num2;
+                    result = subtraction.subtract();
+                    break;
+                case '/':
+                    Divide divide = new Divide();
+                    divide.num1 = num1;
+                    divide.num2 = num2;
+                    result = divide.divide();
+                    break;
+                case '*':
+                    Multiply multiplication = new Multiply();
+                    multiplication.num1 = num1;
+                    multiplication.num2 = num2;
+                    result = multiplication.multiply();
+                    break;
+                default:
+                    result = "Error: Invalid operation.";
+                    break;
+            }
+
+            textBox1.Text = result.ToString();
+        }
+
+        
     }
 }
