@@ -95,7 +95,8 @@ namespace WinFormsApp1___BasicOOP
             {
                 // Disable the textbox
                 this.textBox1.Enabled = false;
-
+                // Clear the textbox
+                clearText();
                 // Disable all calculator buttons
                 foreach (Control ctrl in this.Controls)
                 {
@@ -122,7 +123,7 @@ namespace WinFormsApp1___BasicOOP
         private void button22_Click(object sender, EventArgs e)
         {
             // Clear the textbox
-            this.textBox1.Clear();
+            clearText();
         }
 
         private void btnDot_Click(object sender, EventArgs e)
@@ -143,6 +144,11 @@ namespace WinFormsApp1___BasicOOP
             {
                 e.Handled = true;
             }
+        }
+        private void clearText()
+        {
+            // Clear the textbox
+            this.textBox1.Clear();
         }
     }
 }
