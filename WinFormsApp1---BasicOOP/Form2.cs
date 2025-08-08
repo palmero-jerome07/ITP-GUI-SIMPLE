@@ -21,5 +21,15 @@ namespace WinFormsApp1___BasicOOP
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Calculator_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
