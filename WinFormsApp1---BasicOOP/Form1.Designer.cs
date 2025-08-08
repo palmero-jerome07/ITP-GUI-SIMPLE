@@ -30,6 +30,7 @@ namespace WinFormsApp1___BasicOOP
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Authentication));
             lblEmail = new Label();
             lblPassword = new Label();
             txtEmail = new TextBox();
@@ -158,12 +159,15 @@ namespace WinFormsApp1___BasicOOP
             // pictureBox1
             // 
             pictureBox1.Cursor = Cursors.Hand;
+            pictureBox1.ErrorImage = (Image)resources.GetObject("pictureBox1.ErrorImage");
+            pictureBox1.InitialImage = (Image)resources.GetObject("pictureBox1.InitialImage");
             pictureBox1.Location = new Point(225, 40);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(73, 72);
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;
             toolTip6.SetToolTip(pictureBox1, "DOTA LOGO");
+            pictureBox1.WaitOnLoad = true;
             pictureBox1.Click += pictureBox1_Click;
             // 
             // Authentication
