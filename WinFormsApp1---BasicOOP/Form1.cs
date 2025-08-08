@@ -4,13 +4,19 @@ namespace WinFormsApp1___BasicOOP
     {
         public Authentication()
         {
-            InitializeComponent();
+            Calculator form2 = new Calculator();
+            form2.Show();
+            this.Hide(); // Optional: hide the current form
+            //InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Calculator form2 = new Calculator();
+            form2.Show();
+            this.Hide(); // Optional: hide the current form
             pictureBox1.Image = Image.FromFile(@"C:\Users\USER-PC\Downloads\pngwing.com.png");
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage; // Optional: fit image to box
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void btnSignIn_Click(object sender, EventArgs e)
@@ -38,9 +44,7 @@ namespace WinFormsApp1___BasicOOP
                     MessageBox.Show("Sign-in successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     // Open the next form
-                    Calculator form2 = new Calculator();
-                    form2.Show();
-                    this.Hide(); // Optional: hide the current form
+                    
                 }
             }
         }
