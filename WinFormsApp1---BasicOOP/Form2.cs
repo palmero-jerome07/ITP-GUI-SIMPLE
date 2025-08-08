@@ -15,6 +15,8 @@ namespace WinFormsApp1___BasicOOP
         public Calculator()
         {
             InitializeComponent();
+            this.MaximizeBox = false; // Disable maximize button
+            this.BackColor = Color.WhiteSmoke;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -29,7 +31,11 @@ namespace WinFormsApp1___BasicOOP
 
         private void Calculator_Load(object sender, EventArgs e)
         {
+        }
 
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
