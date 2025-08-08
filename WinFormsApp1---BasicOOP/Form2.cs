@@ -124,5 +124,25 @@ namespace WinFormsApp1___BasicOOP
             // Clear the textbox
             this.textBox1.Clear();
         }
+
+        private void btnDot_Click(object sender, EventArgs e)
+        {
+            this.textBox1.Text += this.btnDot.Text;
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Allow control keys like Backspace
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true; // Block character
+            }
+
+            // Allow only one decimal point
+            if (e.KeyChar == '.' && (textBox1.Text.Contains(".")))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace WinFormsApp1___BasicOOP
+﻿
+
+namespace WinFormsApp1___BasicOOP
 {
     partial class Calculator
     {
@@ -38,7 +40,7 @@
             btn9 = new Button();
             btn6 = new Button();
             btn3 = new Button();
-            button12 = new Button();
+            btnDot = new Button();
             btn0 = new Button();
             btn2 = new Button();
             btn5 = new Button();
@@ -64,6 +66,7 @@
             textBox1.TabIndex = 0;
             textBox1.TextAlign = HorizontalAlignment.Right;
             textBox1.TextChanged += textBox1_TextChanged;
+            textBox1.KeyPress += textBox1_KeyPress;
             // 
             // button1
             // 
@@ -203,20 +206,21 @@
             btn3.UseVisualStyleBackColor = false;
             btn3.Click += btn3_Click;
             // 
-            // button12
+            // btnDot
             // 
-            button12.BackColor = SystemColors.ControlLightLight;
-            button12.Cursor = Cursors.Hand;
-            button12.FlatAppearance.BorderColor = Color.FromArgb(222, 192, 0);
-            button12.FlatAppearance.BorderSize = 0;
-            button12.FlatStyle = FlatStyle.Flat;
-            button12.Font = new Font("Roboto", 20.25F, FontStyle.Bold);
-            button12.Location = new Point(175, 349);
-            button12.Name = "button12";
-            button12.Size = new Size(61, 46);
-            button12.TabIndex = 12;
-            button12.Text = ".";
-            button12.UseVisualStyleBackColor = false;
+            btnDot.BackColor = SystemColors.ControlLightLight;
+            btnDot.Cursor = Cursors.Hand;
+            btnDot.FlatAppearance.BorderColor = Color.FromArgb(222, 192, 0);
+            btnDot.FlatAppearance.BorderSize = 0;
+            btnDot.FlatStyle = FlatStyle.Flat;
+            btnDot.Font = new Font("Roboto", 20.25F, FontStyle.Bold);
+            btnDot.Location = new Point(175, 349);
+            btnDot.Name = "btnDot";
+            btnDot.Size = new Size(61, 46);
+            btnDot.TabIndex = 12;
+            btnDot.Text = ".";
+            btnDot.UseVisualStyleBackColor = false;
+            btnDot.Click += btnDot_Click;
             // 
             // btn0
             // 
@@ -396,7 +400,7 @@
             Controls.Add(btn2);
             Controls.Add(btn5);
             Controls.Add(btn8);
-            Controls.Add(button12);
+            Controls.Add(btnDot);
             Controls.Add(btn3);
             Controls.Add(btn6);
             Controls.Add(btn9);
@@ -416,6 +420,11 @@
             PerformLayout();
         }
 
+        // Find and remove any duplicate btnDot_Click event handler definitions in this file.
+        // Ensure only one definition exists for btnDot_Click in the Calculator class.
+
+
+
         #endregion
 
         private TextBox textBox1;
@@ -428,7 +437,7 @@
         private Button btn9;
         private Button btn6;
         private Button btn3;
-        private Button button12;
+        private Button btnDot;
         private Button btn0;
         private Button btn2;
         private Button btn5;
