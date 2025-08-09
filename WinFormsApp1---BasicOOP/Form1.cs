@@ -13,9 +13,9 @@ namespace WinFormsApp1___BasicOOP
         private void Form1_Load(object sender, EventArgs e)
         {
             Calculator form2 = new Calculator();
-            form2.Show();
+            form2.Show(); //This will show the calculator
             this.Hide(); // Optional: hide the current form
-            pictureBox1.Image = Image.FromFile(@"C:\Users\USER-PC\Downloads\pngwing.com.png");
+            pictureBox1.Image = Image.FromFile(@"C:\Users\USER-PC\Downloads\pngwing.com.png"); 
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage; //This is picture box for the logo
         }
 
