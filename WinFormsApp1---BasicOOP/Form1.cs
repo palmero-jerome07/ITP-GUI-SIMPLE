@@ -16,7 +16,7 @@ namespace WinFormsApp1___BasicOOP
             form2.Show();
             this.Hide(); // Optional: hide the current form
             pictureBox1.Image = Image.FromFile(@"C:\Users\USER-PC\Downloads\pngwing.com.png");
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage; //This is picture box for the logo
         }
 
         private void btnSignIn_Click(object sender, EventArgs e)
