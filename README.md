@@ -41,4 +41,4 @@ The project demonstrates basic GUI design, control usage, and event handling usi
 🙋‍♂️ Author
 Jerome Palmero
 Student | Beginner in C# and GUI Programming
-Made for educational purposes under the ITP course.
+Made for educational purposes under the IPT course.
