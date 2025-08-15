@@ -170,7 +170,7 @@ namespace WinFormsApp1___BasicOOP
         private void clearText()
         {
             // Clear the textbox
-            this.textBox1.Clear();
+            this.textBox1.Clear(); //This will clear the textbox
         }
         private void Operator_Click(object sender, EventArgs e)
         {
