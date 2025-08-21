@@ -1,4 +1,4 @@
-# 🖥️ ITP GUI Simple (WinForms Beginner Project)
+# 🖥️ IPT GUI Simple (WinForms Beginner Project)
 
 This is a **simple Windows Forms (WinForms)** application built in C# as part of a beginner-level activity for the **Integrative Programming and Technologies 1 (IPT)** course.  
 The project demonstrates basic GUI design, control usage, and event handling using Visual Studio and .NET.
